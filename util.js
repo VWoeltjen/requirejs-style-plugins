@@ -44,6 +44,9 @@ define(function (require) {
       var Csso = requirejs.nodeRequire('csso');
       return Csso.justDoIt(css);
     }
+    else if (optimizer === 'none') {
+      return css;
+    }    
     else {
       throw new Error('optimizer with name of "' + optimizer + '" not found for this environment');
     }
